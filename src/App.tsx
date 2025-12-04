@@ -14,6 +14,9 @@ function App() {
         <div>
           <p>character display</p>
         </div>
+        <div>
+          <p>info</p>
+        </div>
       </div>
     </Fragment>
   )
