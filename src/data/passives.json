@@ -1,0 +1,39 @@
+{
+  "passives": [
+    {
+      "key": "minor-strength-boost",
+      "effect": {
+        "direction": "positive",
+        "value": 1
+      }
+    },
+    {
+      "key": "minor-dexterity-boost",
+      "effect": {
+        "direction": "positive",
+        "value": 1
+      }
+    },
+    {
+      "key": "minor-charisma-boost",
+      "effect": {
+        "direction": "positive",
+        "value": 1
+      }
+    },
+    {
+      "key": "minor-intelligence-boost",
+      "effect": {
+        "direction": "positive",
+        "value": 1
+      }
+    },
+    {
+      "key": "minor-constitution-boost",
+      "effect": {
+        "direction": "positive",
+        "value": 1
+      }
+    }
+  ]
+}
