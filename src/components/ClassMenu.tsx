@@ -1,6 +1,7 @@
 import { ClassTypes } from "../types";
 import { useCharacter, useCharacterDispatch } from "../lib/CharacterContext";
 
+// idk how much this would actually be used, probably safe for delete
 
 export const ClassMenu = () => {
     const character = useCharacter();
@@ -12,7 +13,7 @@ export const ClassMenu = () => {
             <select value={character.class} onChange={(e) => {
                 if (dispatch) {
                     dispatch({
-                        type: 'class-change',
+                        type: 'class',
                         updates: {
                             class: e.target.value as ClassTypes
                         }
