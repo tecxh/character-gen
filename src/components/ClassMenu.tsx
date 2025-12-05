@@ -1,27 +1,24 @@
-import { useEffect } from "react";
-import { useState } from "react"
-import { originalClasses } from "../data/classTypes";
-import { type ClassType, ClassTypes } from "../types";
+import { ClassTypes } from "../types";
+import { useCharacter, useCharacterDispatch } from "../lib/CharacterContext";
 
 
 export const ClassMenu = () => {
-    const [classSelection, setClassSelection] = useState<ClassType>();
-
-    useEffect(() => {
-        console.info('use effect')
-        console.info(classSelection)
-    }, [classSelection])
-
-    const handleClassChange = (classType: ClassTypes) => {
-        const newClass = originalClasses.find((ogClass) => ogClass.type === classType);
-        console.info(newClass)
-        setClassSelection(newClass)
-    }
+    const character = useCharacter();
+    const dispatch = useCharacterDispatch();
 
     return (
         <div>
             <p>Select a Class</p>
-            <select value={classSelection?.type} onChange={(e) => handleClassChange(e.target.value as ClassTypes)}>
+            <select value={character.class} onChange={(e) => {
+                if (dispatch) {
+                    dispatch({
+                        type: 'class-change',
+                        updates: {
+                            class: e.target.value as ClassTypes
+                        }
+                    })
+                }
+            }}>
                 <option>--</option>
                 <option value={ClassTypes.Caster}>Caster</option>
                 <option value={ClassTypes.Warrior}>Warrior</option>
