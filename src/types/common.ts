@@ -6,3 +6,12 @@ export interface Location {
     passives: string[];
     abilities: string[];
 }
+
+export interface Passive {
+    key: string;
+    effect: {
+        direction: string;
+        attribute: string;
+        value: number;
+    }
+} 
