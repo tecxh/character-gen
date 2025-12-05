@@ -2,35 +2,50 @@
 import { createContext, useContext, useReducer, type Dispatch, type PropsWithChildren } from "react"
 import { ClassTypes } from "../types";
 
-type CharacterReducerActionType = 'name-change' | 'class-change'
+type CharacterReducerActionType = 'name' | 'class' | 'origin-location'
 
 interface CharacterReducerAction {
     type: CharacterReducerActionType,
     updates: Partial<CharacterState>;
 }
 
+interface CharacterBio {
+    originLocation?: string;
+}
+
 interface CharacterState {
     name: string;
     class: string;
+    // new
+    bio: CharacterBio
 }
 
 const defaultCharacter: CharacterState = {
     name: 'Adira',
-    class: ClassTypes.Warrior
+    class: ClassTypes.Warrior,
+    bio: {}
 };
 
 const characterReducer = (state: CharacterState, action: CharacterReducerAction): CharacterState => {
     // need a better way to handle the defaults, or chance that we're missing the update
     switch (action.type) {
-        case 'name-change': 
+        case 'name': 
             return {
                 ...state,
                 name: action.updates.name ?? ''
             }
-        case 'class-change':
+        case 'class':
             return {
                 ...state,
                 class: action.updates.class ?? ''
+            }
+        case 'origin-location':
+            return {
+                ...state,
+                bio: {
+                    ...state.bio,
+                    originLocation: action.updates.bio?.originLocation
+                }
             }
         default:
             return state;
