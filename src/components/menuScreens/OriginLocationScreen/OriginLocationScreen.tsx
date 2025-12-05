@@ -23,9 +23,8 @@ export const OriginLocationScreen = () => {
     return (
         <div>
             <p>Every journey starts somewhere, from where do you hail?</p>
-            {Object.keys(locations).map((locationKey) => {
-                const location = locations[locationKey]
-                return <Button label={location.label} onClick={() => handleLocationSelect(locationKey)} />
+            {locations.map((location) => {
+                return <Button label={location.label} onClick={() => handleLocationSelect(location.key)} />
             })}
             <LocationDescription />
         </div>

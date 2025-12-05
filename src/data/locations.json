@@ -1,42 +1,44 @@
 {
-    "corinth": {
-        "key": "corinth",
-        "label": "Corinth",
-        "personLabel": "Corinthian",
-        "flavorText": "your time in corinth made you a smooth talker, with solid charisma",
-        "passives": ["minor-charisma-boost", "minor-barter-boost"],
-        "abilities": ["charm"]
-    },
-    "athens": {
-        "key": "athens",
-        "label": "Athens",
-        "personLabel": "Athenian",
-        "flavorText": "your time in the great schools of Athens made you intelligent and quick witted",
-        "passives": ["minor-intelligence-boost", "minor-wisdom-boost"],
-        "abilities": ["special-athens-thing"]
-    },
-    "sparta": {
-        "key": "sparta",
-        "label": "Sparta",
-        "personLabel": "Spartan",
-        "flavorText": "Your time in Sparta honed your body and mind into a weapon",
-        "passives": ["minor-dexterity-boost", "minor-reflex-boost"],
-        "abilities": ["spartan-phalanx"]
-    },
-    "crete": {
-        "key": "crete",
-        "label": "Crete",
-        "personLabel": "Cretan",
-        "flavorText": "",
-        "passives": ["minor-aquatic-speed-boost", "minor-strength-boost"],
-        "abilities": ["special-crete-thing"]
-    },
-    "thebes": {
-        "key": "thebes",
-        "label": "Thebes",
-        "personLabel": "Theban",
-        "flavorText": "Growing up in the shadow of the fiercest military might of Thebes, your body has been trained relentlessly",
-        "passives": ["minor-strength-boost", "minor-reflex-boost"],
-        "abilities": ["special-thebes-thing"]
-    }
+    "locations": [
+        {
+            "key": "corinth",
+            "label": "Corinth",
+            "personLabel": "Corinthian",
+            "flavorText": "your time in corinth made you a smooth talker, with solid charisma",
+            "passives": ["minor-charisma-boost", "minor-barter-boost"],
+            "abilities": ["charm"]
+        },
+        {
+            "key": "athens",
+            "label": "Athens",
+            "personLabel": "Athenian",
+            "flavorText": "your time in the great schools of Athens made you intelligent and quick witted",
+            "passives": ["minor-intelligence-boost", "minor-wisdom-boost"],
+            "abilities": ["special-athens-thing"]
+        },
+        {
+            "key": "sparta",
+            "label": "Sparta",
+            "personLabel": "Spartan",
+            "flavorText": "Your time in Sparta honed your body and mind into a weapon",
+            "passives": ["minor-dexterity-boost", "minor-reflex-boost"],
+            "abilities": ["spartan-phalanx"]
+        },
+        {
+            "key": "crete",
+            "label": "Crete",
+            "personLabel": "Cretan",
+            "flavorText": "something about crete idk",
+            "passives": ["minor-aquatic-speed-boost", "minor-strength-boost"],
+            "abilities": ["special-crete-thing"]
+        },
+        {
+            "key": "thebes",
+            "label": "Thebes",
+            "personLabel": "Theban",
+            "flavorText": "Growing up in the shadow of the fiercest military might of Thebes, your body has been trained relentlessly",
+            "passives": ["minor-strength-boost", "minor-reflex-boost"],
+            "abilities": ["special-thebes-thing"]
+        }
+    ]
 }
