@@ -1,18 +1,21 @@
 import { useCharacter } from "../../../lib/CharacterContext"
+import { useData } from "../../../lib/DataContext";
 
 export const LocationDescription = () => {
-    const character = useCharacter();
+    const { bio: {originLocation} } = useCharacter();
+    const { locations } = useData();
 
-    if (!character.bio.originLocation) return null;
-
+    if (!originLocation) return null;
+    const location = Object.values(locations).find((location) => location.key === originLocation);
+    
     return (
         <div>
-            <h2 style={{ textTransform: 'capitalize'}}>{character.bio.originLocation}</h2>
-            <p>From your time in {character.bio.originLocation} you blah blah blah</p>
+            <h2 style={{ textTransform: 'capitalize'}}>{location.label}</h2>
+            <p>{location.flavorText}</p>
             <h3>Passives</h3>
-            <p>list of passives from {character.bio.originLocation}</p>
+            <p>{location.passives}</p>
             <h3>Abilities</h3>
-            <p>list of abilities from {character.bio.originLocation}</p>
+            <p>{location.abilities}</p>
         </div>
     )
 }
