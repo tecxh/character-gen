@@ -1,12 +1,14 @@
 import { useCharacter } from "../../../lib/CharacterContext"
 import { useData } from "../../../lib/DataContext";
+import { PassiveDisplay } from "../../common/PassiveDisplay";
 
 export const LocationDescription = () => {
     const { bio: { originLocation } } = useCharacter();
-    const { locations } = useData();
+    const { locations, passives } = useData();
 
     if (!originLocation) return null;
     const location = locations.find((location) => location.key === originLocation);
+    const locationPassive = passives.filter((passive) => location?.passives.includes(passive.key))[0]
     
     // dont want to have to opt chain, should be able to find a way to 
     // let TS know this wont be undefined
@@ -14,9 +16,9 @@ export const LocationDescription = () => {
         <div>
             <h2 style={{ textTransform: 'capitalize'}}>{location?.label}</h2>
             <p>{location?.flavorText}</p>
-            <h3>Passives</h3>
-            <p>{location?.passives}</p>
-            <h3>Abilities</h3>
+            <h3>Passive</h3>
+            <PassiveDisplay passive={locationPassive} />
+            <h3>Regional Ability</h3>
             <p>{location?.abilities}</p>
         </div>
     )
