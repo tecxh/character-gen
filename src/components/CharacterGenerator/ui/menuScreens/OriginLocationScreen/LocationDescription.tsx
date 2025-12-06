@@ -1,6 +1,6 @@
-import { useCharacter } from "../../../lib/CharacterContext"
-import { useData } from "../../../lib/DataContext";
-import { PassiveDisplay } from "../../common/PassiveDisplay";
+import { useCharacter } from "../../../../../lib/CharacterContext"
+import { useData } from "../../../../../lib/DataContext";
+import { PassiveDisplay } from "../../../../common/PassiveDisplay";
 
 export const LocationDescription = () => {
     const { bio: { originLocation } } = useCharacter();

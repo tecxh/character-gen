@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { CharacterProvider } from "../../lib/CharacterContext"
 import { DataProvider } from "../../lib/DataContext"
-import { GeneratorNavigation } from "../GeneratorNavigation";
-import { GeneratorMenu } from "../GeneratorMenu";
-import { CharacterInfoDisplay } from "../CharacterInfoDisplay";
+import { GeneratorNavigation, GeneratorMenu, CharacterInfoDisplay } from "./ui";
 
 export const CharacterGenerator = () => {
   const [step, setStep] = useState(1);

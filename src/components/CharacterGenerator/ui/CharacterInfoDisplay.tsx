@@ -1,5 +1,5 @@
-import { useCharacter } from "../lib/CharacterContext"
-import { useData } from "../lib/DataContext";
+import { useCharacter } from "../../../lib/CharacterContext"
+import { useData } from "../../../lib/DataContext";
 
 export const CharacterInfoDisplay = () => {
     const character = useCharacter();

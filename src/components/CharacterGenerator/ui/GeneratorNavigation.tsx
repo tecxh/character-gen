@@ -1,4 +1,4 @@
-import { Button } from "./common"
+import { Button } from "../../common"
 
 interface GeneratorNavigationProps {
     setStep: (step: number) => void;
