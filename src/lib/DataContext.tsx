@@ -1,23 +1,22 @@
 /* eslint-disable react-refresh/only-export-components */
-// supplies data via hooks to any component that needs it
 import locData from '../data/locations.json';
 import passiveData from '../data/passives.json'
+import classData from '../data/classes.json';
 
 
 import { createContext, useContext, type PropsWithChildren } from "react"
-import type { Location, Passive } from '../types';
+import type { Location, OriginalClass, Passive } from '../types';
 
-// type IDataContext = Record<string, Record<string, unknown>>
-
-// extend union as data types grow
 interface IDataContext {
     locations: Location[];
     passives: Passive[];
+    classes: OriginalClass[];
 }
 
 const dataContextValue = {
     locations: locData.locations,
     passives: passiveData.passives,
+    classes: classData.classes,
 }
 
 const DataContext = createContext<IDataContext>(dataContextValue);

@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "key": "caster",
+            "label": "Caster",
+            "flavorText": "The wild magics of the arcane flow through you, with your god guiding your potential",
+            "passives": ["minor-charisma-boost"],
+            "abilities": ["elemental-arcana"]
+        },
+        {
+            "key": "mercenary",
+            "label": "Mercenary",
+            "flavorText": "Your skill with weapons is unmatched, and you spill blood in the name of your god.",
+            "passives": ["minor-strength-boost"],
+            "abilities": ["martial-stance"]
+        }
+    ]
+}
