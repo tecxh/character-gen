@@ -1,6 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useReducer, type Dispatch, type PropsWithChildren } from "react"
-import { ClassTypes } from "../types";
 
 type CharacterReducerActionType = 'name' | 'class' | 'origin-location'
 
@@ -15,14 +14,14 @@ interface CharacterBio {
 
 interface CharacterState {
     name: string;
-    class: string;
+    class?: string;
     // new
     bio: CharacterBio
 }
 
 const defaultCharacter: CharacterState = {
     name: 'Adira',
-    class: ClassTypes.Warrior,
+    class: '',
     bio: {}
 };
 
