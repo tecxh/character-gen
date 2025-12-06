@@ -1,9 +1,7 @@
-import { ClassTypes } from "../types";
-import { useCharacter, useCharacterDispatch } from "../lib/CharacterContext";
+import { ClassTypes } from "../../../types";
+import { useCharacter, useCharacterDispatch } from "../../../lib/CharacterContext";
 
-// idk how much this would actually be used, probably safe for delete
-
-export const ClassMenu = () => {
+export const OriginClassScreen = () => {
     const character = useCharacter();
     const dispatch = useCharacterDispatch();
 
@@ -23,8 +21,6 @@ export const ClassMenu = () => {
                 <option>--</option>
                 <option value={ClassTypes.Caster}>Caster</option>
                 <option value={ClassTypes.Warrior}>Warrior</option>
-                {/* <option value={ClassTypes.BlessedKnight}>Blessed Knight</option> */}
-                {/* <option value={ClassTypes.Berzerker}>Berserker</option> */}
             </select>
 
         </div>
