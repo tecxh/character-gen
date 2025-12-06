@@ -1,5 +1,6 @@
 import { useCharacter, useCharacterDispatch } from "../../../lib/CharacterContext";
 import { useData } from "../../../lib/DataContext";
+import { ClassDescription } from "./ClassDescription";
 
 export const OriginClassScreen = () => {
     const character = useCharacter();
@@ -23,7 +24,7 @@ export const OriginClassScreen = () => {
                 <option>--</option>
                 {classes.map((originalClass) => <option value={originalClass.key}>{originalClass.label}</option>)}
             </select>
-
+            <ClassDescription />
         </div>
     )
 }
