@@ -1,6 +1,6 @@
-import { useCharacterDispatch } from "../../../lib/CharacterContext"
-import { useData } from "../../../lib/DataContext";
-import { Button } from "../../common"
+import { useCharacterDispatch } from "../../../../../lib/CharacterContext"
+import { useData } from "../../../../../lib/DataContext";
+import { Button } from "../../../../common"
 import { LocationDescription } from "./LocationDescription";
 
 export const OriginLocationScreen = () => {

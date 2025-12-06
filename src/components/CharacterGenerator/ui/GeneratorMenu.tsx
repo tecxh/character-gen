@@ -1,6 +1,6 @@
 import { CommonScreen } from "./menuScreens/CommonScreen"
 import { OriginLocationScreen } from "./menuScreens/OriginLocationScreen"
-import { Button } from "./common";
+import { Button } from "../../common";
 import { OriginClassScreen } from "./menuScreens";
 
 interface GeneratorMenuProps {
