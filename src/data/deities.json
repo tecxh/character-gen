@@ -1,0 +1,32 @@
+{
+    "deities": [
+        {
+          "key": "hades",
+          "label": "Hades",
+          "flavorText": "necromancy",
+          "abilities": ["death-touch"],
+          "classSupport": ["caster"]
+        },
+        {
+          "key": "hephaestus",
+          "label": "Hephaestus",
+          "flavorText": "fire",
+          "abilities": ["fire-mote"],
+          "classSupport": ["caster"]
+        },
+        {
+          "key": "ares",
+          "label": "Ares",
+          "flavorText": "brutal vicious war",
+          "abilities": ["blood-lust"],
+          "classSupport": ["mercenary"]
+        },
+        {
+          "key": "athena",
+          "label": "Athena",
+          "flavorText": "strategic war",
+          "abilities": ["exploit-weakness"],
+          "classSupport": ["mercenary"]
+        }
+    ]
+}

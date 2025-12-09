@@ -1,0 +1,32 @@
+{
+    "abilities": [
+        {
+            "key": "death-touch",
+            "label": "Death Touch",
+            "flavorText": "Place your hand on a create and sap their life force",
+            "cost": 30,
+            "level": 1
+        },
+        {
+            "key": "fire-mote",
+            "label": "Fire Mote",
+            "flavorText": "Create a ball of flames in your palm and hurl it at enemies",
+            "cost": 30,
+            "level": 1
+        },
+        {
+            "key": "blood-lust",
+            "label": "Blood Lust",
+            "flavorText": "Enter a fervent trance, taking and receiving an extra 1d8 of damage for the next two turns.",
+            "cost": 30,
+            "level": 1
+        },
+        {
+            "key": "exploit-weakness",
+            "label": "Exploit Weakness",
+            "flavorText": "Find and target an enemy's weakness, dealing an extra 1d4 damage",
+            "cost": 30,
+            "level": 1
+        }
+    ]
+}

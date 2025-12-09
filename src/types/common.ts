@@ -23,3 +23,19 @@ export interface OriginalClass {
   passives: string[];
   abilities: string[];
 }
+
+export interface Deity {
+  key: string;
+  label: string;
+  flavorText: string;
+  abilities: string[];
+  classSupport: string[];
+}
+
+export interface Ability {
+  key: string;
+  label: string;
+  flavorText: string;
+  cost: number;
+  level: number;
+}

@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useReducer, type Dispatch, type PropsWithChildren } from "react"
 
-type CharacterReducerActionType = 'name' | 'class' | 'origin-location'
+type CharacterReducerActionType = 'name' | 'class' | 'origin-location' | 'deity'
 
 interface CharacterReducerAction {
     type: CharacterReducerActionType,
@@ -15,13 +15,13 @@ interface CharacterBio {
 interface CharacterState {
     name: string;
     class?: string;
+    deity?: string;
     // new
     bio: CharacterBio
 }
 
 const defaultCharacter: CharacterState = {
     name: 'Adira',
-    class: '',
     bio: {}
 };
 
@@ -45,6 +45,11 @@ const characterReducer = (state: CharacterState, action: CharacterReducerAction)
                     ...state.bio,
                     originLocation: action.updates.bio?.originLocation
                 }
+            }
+        case 'deity':
+            return {
+                ...state,
+                deity: action.updates.deity,
             }
         default:
             return state;
