@@ -22,7 +22,17 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+        /* Alias Set Up */
+    "baseUrl": ".", // Or your preferred base directory, e.g., "src"
+        "paths": {
+          "~/*": ["./src/*"],
+          "~components/*": ["./src/components/*"],
+          "~lib/*": ["./src/lib/*"],
+          "~data/*": ["./src/data/*"],
+          "~types/*": ["./src/types/*"]
+        }
   },
   "include": ["src"]
 }
