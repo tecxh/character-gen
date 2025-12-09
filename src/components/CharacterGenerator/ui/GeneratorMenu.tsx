@@ -1,7 +1,5 @@
-import { CommonScreen } from "./menuScreens/CommonScreen"
-import { OriginLocationScreen } from "./menuScreens/OriginLocationScreen"
-import { Button } from "../../common";
-import { OriginClassScreen } from "./menuScreens";
+import { CommonScreen, OriginLocationScreen, OriginClassScreen } from "./menuScreens"
+import { Button } from "~components/common";
 
 interface GeneratorMenuProps {
   step: number;

@@ -1,4 +1,4 @@
-import type { Passive } from "../../types";
+import type { Passive } from "~/types";
 
 interface PassiveDisplayProps {
     passive: Passive;
