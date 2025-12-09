@@ -1,5 +1,5 @@
 import { useCharacter, useData } from "~lib/context"
-import { PassiveDisplay } from "~components/common/PassiveDisplay";
+import { PassiveDisplay } from "~components/common";
 
 export const ClassDescription = () => {
     const { class: charClass } = useCharacter();
