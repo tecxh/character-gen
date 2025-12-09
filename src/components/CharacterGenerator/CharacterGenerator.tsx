@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { CharacterProvider } from "../../lib/CharacterContext"
-import { DataProvider } from "../../lib/DataContext"
+import { CharacterProvider, DataProvider } from "~lib/context"
 import { GeneratorNavigation, GeneratorMenu, CharacterInfoDisplay } from "./ui";
 
 export const CharacterGenerator = () => {

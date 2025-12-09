@@ -1,11 +1,10 @@
 /* eslint-disable react-refresh/only-export-components */
-import locData from '../data/locations.json';
-import passiveData from '../data/passives.json'
-import classData from '../data/classes.json';
-
-
 import { createContext, useContext, type PropsWithChildren } from "react"
-import type { Location, OriginalClass, Passive } from '../types';
+
+import type { Location, OriginalClass, Passive } from '~/types';
+import locData from '~/data/locations.json';
+import passiveData from '~/data/passives.json'
+import classData from '~/data/classes.json';
 
 interface IDataContext {
     locations: Location[];

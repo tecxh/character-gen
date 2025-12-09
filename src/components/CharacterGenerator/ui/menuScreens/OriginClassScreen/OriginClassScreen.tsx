@@ -1,5 +1,4 @@
-import { useCharacter, useCharacterDispatch } from "../../../../../lib/CharacterContext";
-import { useData } from "../../../../../lib/DataContext";
+import { useCharacter, useCharacterDispatch, useData } from "~/lib/context";
 import { ClassDescription } from "./ClassDescription";
 
 export const OriginClassScreen = () => {
