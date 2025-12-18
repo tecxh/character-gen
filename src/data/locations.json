@@ -14,7 +14,7 @@
             "personLabel": "Athenian",
             "flavorText": "your time in the great schools of Athens made you intelligent and quick witted",
             "passives": ["minor-intelligence-boost"],
-            "abilities": ["special-athens-thing"]
+            "abilities": ["meditate"]
         },
         {
             "key": "sparta",
@@ -22,7 +22,7 @@
             "personLabel": "Spartan",
             "flavorText": "Your time in Sparta honed your body and mind into a weapon",
             "passives": ["minor-dexterity-boost"],
-            "abilities": ["spartan-phalanx"]
+            "abilities": ["charm"]
         },
         {
             "key": "crete",
@@ -30,7 +30,7 @@
             "personLabel": "Cretan",
             "flavorText": "something about crete idk",
             "passives": ["minor-constitution-boost"],
-            "abilities": ["special-crete-thing"]
+            "abilities": ["charm"]
         },
         {
             "key": "thebes",
@@ -38,7 +38,7 @@
             "personLabel": "Theban",
             "flavorText": "Growing up in the shadow of the fiercest military might of Thebes, your body has been trained relentlessly",
             "passives": ["minor-strength-boost"],
-            "abilities": ["special-thebes-thing"]
+            "abilities": ["charm"]
         }
     ]
 }

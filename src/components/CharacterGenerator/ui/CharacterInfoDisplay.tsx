@@ -2,17 +2,23 @@ import { useCharacter, useData } from "~lib/context"
 
 export const CharacterInfoDisplay = () => {
     const character = useCharacter();
-    const { locations, classes } = useData();
+    const { locations, classes, deities } = useData();
 
-    const { bio: { originLocation }, class: charClass } = character;
-    const location = locations.find((location) => location.key === originLocation);
+    const { location: charLocation, class: charClass, deity: charDeity, abilitySlots } = character;
+    const location = locations.find((location) => location.key === charLocation);
     const selectedClass = classes.find((originalClass) => originalClass.key === charClass)
+    const selectedDeity = deities.find((deity) => deity.key === charDeity)
     
     return (
         <div>
             <p>{character.name}</p>
-            <span>{location?.personLabel + ' '}</span>
-            <span>{selectedClass?.label}</span>
+            {location && <span>{location?.personLabel + ' '}</span>}
+            {selectedClass && <span>{selectedClass?.label}</span>}
+            {selectedDeity && <p>Devout of {selectedDeity.label}</p>}
+            <hr />
+            <div style={{ display: 'flex', flexDirection: 'column'}}>
+                {abilitySlots.map((abilitySlot) => <span>{abilitySlot.abilityKey}</span>)}
+            </div>
         </div>
     )
 }

@@ -23,3 +23,27 @@ export interface OriginalClass {
   passives: string[];
   abilities: string[];
 }
+
+export interface Deity {
+  key: string;
+  label: string;
+  flavorText: string;
+  abilities: string[];
+  classSupport: string[];
+}
+
+export type AbilityType = 'location' | 'class' | 'deity'
+
+export interface AbilitySlot {
+    abilityKey?: string;
+    reservedFor: AbilityType;
+}
+
+export interface Ability {
+  key: string;
+  label: string;
+  flavorText: string;
+  cost: number;
+  level: number;
+  type: AbilityType
+}

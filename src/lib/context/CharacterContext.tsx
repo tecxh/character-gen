@@ -1,28 +1,57 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useReducer, type Dispatch, type PropsWithChildren } from "react"
+import type { AbilitySlot } from "~/types";
 
-type CharacterReducerActionType = 'name' | 'class' | 'origin-location'
+type CharacterReducerActionType = 'name' | 'class' | 'origin-location' | 'deity'
+
+interface CharacterReducerActionUpdates {
+    name?: string;
+    class?: string;
+    location?: string;
+    deity?: string;
+    abilities?: string[];
+}
 
 interface CharacterReducerAction {
     type: CharacterReducerActionType,
-    updates: Partial<CharacterState>;
-}
-
-interface CharacterBio {
-    originLocation?: string;
+    updates: CharacterReducerActionUpdates;
 }
 
 interface CharacterState {
     name: string;
     class?: string;
+    deity?: string;
     // new
-    bio: CharacterBio
+    location?: string;
+    abilities: string[];
+    abilitySlots: [AbilitySlot, AbilitySlot, AbilitySlot, AbilitySlot, AbilitySlot]; // strict limit of five
 }
 
 const defaultCharacter: CharacterState = {
     name: 'Adira',
-    class: '',
-    bio: {}
+    abilities: [],
+    abilitySlots: [
+        {
+            abilityKey: '',
+            reservedFor: 'location'
+        },
+        {
+            abilityKey: '',
+            reservedFor: 'class'
+        },
+        {
+            abilityKey: '',
+            reservedFor: 'deity'
+        },
+        {
+            abilityKey: '',
+            reservedFor: 'deity'
+        },
+        {
+            abilityKey: '',
+            reservedFor: 'deity'
+        },
+    ]
 };
 
 const characterReducer = (state: CharacterState, action: CharacterReducerAction): CharacterState => {
@@ -33,18 +62,31 @@ const characterReducer = (state: CharacterState, action: CharacterReducerAction)
                 ...state,
                 name: action.updates.name ?? ''
             }
-        case 'class':
+        case 'class': {
+            const { updates: { abilities, class: charClass }} = action
+            const newAbilitySlots = state.abilitySlots;
+            newAbilitySlots[1].abilityKey = abilities ? abilities[0] : '';
+
             return {
                 ...state,
-                class: action.updates.class ?? ''
-            }
-        case 'origin-location':
+                class: charClass ?? '',
+                abilitySlots: newAbilitySlots
+            }}
+        case 'origin-location': {
+            const { updates: { abilities, location }} = action
+            const newAbilitySlots = state.abilitySlots;
+            newAbilitySlots[0].abilityKey = abilities ? abilities[0] : '';
+            // pretty ungraceful ngl
+
             return {
                 ...state,
-                bio: {
-                    ...state.bio,
-                    originLocation: action.updates.bio?.originLocation
-                }
+                location,
+                abilitySlots: newAbilitySlots,
+            }}
+        case 'deity':
+            return {
+                ...state,
+                deity: action.updates.deity,
             }
         default:
             return state;

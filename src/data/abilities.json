@@ -1,0 +1,60 @@
+{
+    "abilities": [
+        {
+            "key": "death-touch",
+            "label": "Death Touch",
+            "flavorText": "Place your hand on a create and sap their life force",
+            "cost": 30,
+            "level": 1,
+            "type": "deity"
+        },
+        {
+            "key": "fire-mote",
+            "label": "Fire Mote",
+            "flavorText": "Create a ball of flames in your palm and hurl it at enemies",
+            "cost": 30,
+            "level": 1,
+            "type": "deity"
+        },
+        {
+            "key": "blood-lust",
+            "label": "Blood Lust",
+            "flavorText": "Enter a fervent trance, taking and receiving an extra 1d8 of damage for the next two turns.",
+            "cost": 30,
+            "level": 1,
+            "type": "deity"
+        },
+        {
+            "key": "exploit-weakness",
+            "label": "Exploit Weakness",
+            "flavorText": "Find and target an enemy's weakness, dealing an extra 1d4 damage",
+            "cost": 30,
+            "level": 1,
+            "type": "deity"
+        },
+        {
+            "key": "charm",
+            "label": "Charm",
+            "flavorText": "Use your wits and pandering to charm someone, gaining an advantage on Charisma checks",
+            "cost": 30,
+            "level": 1,
+            "type": "location"
+        },
+                {
+            "key": "elemental-arcana",
+            "label": "Elemental Arcana",
+            "flavorText": "Infuse your latent arcane potential with the powers of the elements",
+            "cost": 0,
+            "level": 1,
+            "type": "class"
+        },
+                {
+            "key": "martial-stance",
+            "label": "Martial Stance",
+            "flavorText": "Root yourself in your training to deliver vicious weapon attacks",
+            "cost": 0,
+            "level": 1,
+            "type": "class"
+        }
+    ]
+}
