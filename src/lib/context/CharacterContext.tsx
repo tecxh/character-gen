@@ -4,17 +4,17 @@ import type { AbilityType } from "~/types";
 
 type CharacterReducerActionType = 'name' | 'class' | 'origin-location' | 'deity'
 
-// interface CharacterReducerActionUpdate {
-//     name?: string;
-//     class?: string;
-//     location?: string;
-//     deity?: string[];
-//     abilities?: string[];
-// }
+interface CharacterReducerActionUpdates {
+    name?: string;
+    class?: string;
+    location?: string;
+    deity?: string;
+    abilities?: string[];
+}
 
 interface CharacterReducerAction {
     type: CharacterReducerActionType,
-    updates: Partial<CharacterState>;
+    updates: CharacterReducerActionUpdates;
 }
 
 interface AbilitySlot {
