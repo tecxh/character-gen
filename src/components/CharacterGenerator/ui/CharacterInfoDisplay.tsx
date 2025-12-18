@@ -16,7 +16,9 @@ export const CharacterInfoDisplay = () => {
             {selectedClass && <span>{selectedClass?.label}</span>}
             {selectedDeity && <p>Devout of {selectedDeity.label}</p>}
             <hr />
-            {abilities && abilities.map((ability) => <span>{ability}</span>)}
+            <div style={{ display: 'flex', flexDirection: 'column'}}>
+                {abilities && abilities.map((ability) => <span>{ability}</span>)}
+            </div>
         </div>
     )
 }

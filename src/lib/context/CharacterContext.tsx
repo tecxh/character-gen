@@ -36,9 +36,13 @@ const characterReducer = (state: CharacterState, action: CharacterReducerAction)
                 name: action.updates.name ?? ''
             }
         case 'class': {
+            const { updates: { abilities, class: charClass }} = action
+            const currentAbilities = state.abilities;
+            currentAbilities[1] = abilities ? abilities[0] : '';
+
             return {
                 ...state,
-                class: action.updates.class ?? ''
+                class: charClass ?? ''
             }}
         case 'origin-location': {
             const { updates: { abilities, bio }} = action

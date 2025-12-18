@@ -12,10 +12,13 @@ export const OriginClassScreen = () => {
             <p>The lands are fraught with danger, how have you protected yourself?</p>
             <select value={character.class} onChange={(e) => {
                 if (dispatch) {
+                    const selectedClass = classes.find((originClass) => originClass.key === e.target.value)
+
                     dispatch({
                         type: 'class',
                         updates: {
-                            class: e.target.value
+                            class: selectedClass?.key,
+                            abilities: selectedClass?.abilities
                         }
                     })
                 }
