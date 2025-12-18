@@ -1,5 +1,6 @@
 import { CommonScreen, OriginLocationScreen, OriginClassScreen, DeityChoiceScreen } from "./menuScreens"
 import { Button } from "~components/common";
+import { DeityAbilitiesScreen } from "./menuScreens/DeityAbilitiesScreen";
 
 interface GeneratorMenuProps {
   step: number;
@@ -17,7 +18,7 @@ export const GeneratorMenu = ({ step, increaseStep, decreaseStep }: GeneratorMen
       case 3:
         return <DeityChoiceScreen />;
       case 4:
-        return <p>deity - choose abilities</p>
+        return <DeityAbilitiesScreen />;
       default:
         // error??
         return null;
