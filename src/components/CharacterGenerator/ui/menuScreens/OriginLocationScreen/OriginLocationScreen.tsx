@@ -13,9 +13,7 @@ export const OriginLocationScreen = () => {
             dispatch({
                 type: 'origin-location',
                 updates: {
-                    bio: {
-                        originLocation: newLocation.key,
-                    },
+                    location: newLocation.key,
                     abilities: newLocation.abilities,
                 }
             })

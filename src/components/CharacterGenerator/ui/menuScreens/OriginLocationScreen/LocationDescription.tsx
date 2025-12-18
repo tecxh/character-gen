@@ -2,11 +2,11 @@ import { useCharacter, useData } from "~lib/context"
 import { PassiveDisplay } from "~components/common";
 
 export const LocationDescription = () => {
-    const { bio: { originLocation } } = useCharacter();
+    const { location: charLocation } = useCharacter();
     const { locations, passives } = useData();
 
-    if (!originLocation) return null;
-    const location = locations.find((location) => location.key === originLocation);
+    if (!charLocation) return null;
+    const location = locations.find((location) => location.key === charLocation);
     const locationPassive = passives.filter((passive) => location?.passives.includes(passive.key))[0]
     
     // dont want to have to opt chain, should be able to find a way to 

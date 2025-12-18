@@ -4,8 +4,8 @@ export const CharacterInfoDisplay = () => {
     const character = useCharacter();
     const { locations, classes, deities } = useData();
 
-    const { bio: { originLocation }, class: charClass, deity: charDeity, abilitySlots } = character;
-    const location = locations.find((location) => location.key === originLocation);
+    const { location: charLocation, class: charClass, deity: charDeity, abilitySlots } = character;
+    const location = locations.find((location) => location.key === charLocation);
     const selectedClass = classes.find((originalClass) => originalClass.key === charClass)
     const selectedDeity = deities.find((deity) => deity.key === charDeity)
     

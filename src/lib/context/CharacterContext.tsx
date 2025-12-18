@@ -17,10 +17,6 @@ interface CharacterReducerAction {
     updates: Partial<CharacterState>;
 }
 
-interface CharacterBio {
-    originLocation?: string;
-}
-
 interface AbilitySlot {
     abilityKey?: string;
     reservedFor: AbilityType;
@@ -30,14 +26,13 @@ interface CharacterState {
     class?: string;
     deity?: string;
     // new
-    bio: CharacterBio;
+    location?: string;
     abilities: string[];
     abilitySlots: [AbilitySlot, AbilitySlot, AbilitySlot, AbilitySlot, AbilitySlot]; // strict limit of five
 }
 
 const defaultCharacter: CharacterState = {
     name: 'Adira',
-    bio: {},
     abilities: [],
     abilitySlots: [
         {
@@ -82,17 +77,14 @@ const characterReducer = (state: CharacterState, action: CharacterReducerAction)
                 abilitySlots: newAbilitySlots
             }}
         case 'origin-location': {
-            const { updates: { abilities, bio }} = action
+            const { updates: { abilities, location }} = action
             const newAbilitySlots = state.abilitySlots;
             newAbilitySlots[0].abilityKey = abilities ? abilities[0] : '';
             // pretty ungraceful ngl
 
             return {
                 ...state,
-                bio: {
-                    ...state.bio,
-                    originLocation: bio?.originLocation
-                },
+                location,
                 abilitySlots: newAbilitySlots,
             }}
         case 'deity':
