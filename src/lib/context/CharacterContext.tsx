@@ -1,7 +1,16 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useReducer, type Dispatch, type PropsWithChildren } from "react"
+import type { AbilityType } from "~/types";
 
 type CharacterReducerActionType = 'name' | 'class' | 'origin-location' | 'deity'
+
+// interface CharacterReducerActionUpdate {
+//     name?: string;
+//     class?: string;
+//     location?: string;
+//     deity?: string[];
+//     abilities?: string[];
+// }
 
 interface CharacterReducerAction {
     type: CharacterReducerActionType,
@@ -12,6 +21,10 @@ interface CharacterBio {
     originLocation?: string;
 }
 
+interface AbilitySlot {
+    abilityKey?: string;
+    reservedFor: AbilityType;
+}
 interface CharacterState {
     name: string;
     class?: string;
@@ -19,12 +32,35 @@ interface CharacterState {
     // new
     bio: CharacterBio;
     abilities: string[];
+    abilitySlots: [AbilitySlot, AbilitySlot, AbilitySlot, AbilitySlot, AbilitySlot]; // strict limit of five
 }
 
 const defaultCharacter: CharacterState = {
     name: 'Adira',
     bio: {},
     abilities: [],
+    abilitySlots: [
+        {
+            abilityKey: '',
+            reservedFor: 'location'
+        },
+        {
+            abilityKey: '',
+            reservedFor: 'class'
+        },
+        {
+            abilityKey: '',
+            reservedFor: 'deity'
+        },
+        {
+            abilityKey: '',
+            reservedFor: 'deity'
+        },
+        {
+            abilityKey: '',
+            reservedFor: 'deity'
+        },
+    ]
 };
 
 const characterReducer = (state: CharacterState, action: CharacterReducerAction): CharacterState => {
@@ -37,17 +73,18 @@ const characterReducer = (state: CharacterState, action: CharacterReducerAction)
             }
         case 'class': {
             const { updates: { abilities, class: charClass }} = action
-            const currentAbilities = state.abilities;
-            currentAbilities[1] = abilities ? abilities[0] : '';
+            const newAbilitySlots = state.abilitySlots;
+            newAbilitySlots[1].abilityKey = abilities ? abilities[0] : '';
 
             return {
                 ...state,
-                class: charClass ?? ''
+                class: charClass ?? '',
+                abilitySlots: newAbilitySlots
             }}
         case 'origin-location': {
             const { updates: { abilities, bio }} = action
-            const currentAbilities = state.abilities;
-            currentAbilities[0] = abilities ? abilities[0] : '';
+            const newAbilitySlots = state.abilitySlots;
+            newAbilitySlots[0].abilityKey = abilities ? abilities[0] : '';
             // pretty ungraceful ngl
 
             return {
@@ -56,7 +93,7 @@ const characterReducer = (state: CharacterState, action: CharacterReducerAction)
                     ...state.bio,
                     originLocation: bio?.originLocation
                 },
-                abilities: currentAbilities,
+                abilitySlots: newAbilitySlots,
             }}
         case 'deity':
             return {

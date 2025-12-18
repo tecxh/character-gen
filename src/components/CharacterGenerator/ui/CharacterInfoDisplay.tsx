@@ -4,7 +4,7 @@ export const CharacterInfoDisplay = () => {
     const character = useCharacter();
     const { locations, classes, deities } = useData();
 
-    const { bio: { originLocation }, class: charClass, deity: charDeity, abilities } = character;
+    const { bio: { originLocation }, class: charClass, deity: charDeity, abilitySlots } = character;
     const location = locations.find((location) => location.key === originLocation);
     const selectedClass = classes.find((originalClass) => originalClass.key === charClass)
     const selectedDeity = deities.find((deity) => deity.key === charDeity)
@@ -17,7 +17,7 @@ export const CharacterInfoDisplay = () => {
             {selectedDeity && <p>Devout of {selectedDeity.label}</p>}
             <hr />
             <div style={{ display: 'flex', flexDirection: 'column'}}>
-                {abilities && abilities.map((ability) => <span>{ability}</span>)}
+                {abilitySlots.map((abilitySlot) => <span>{abilitySlot.abilityKey}</span>)}
             </div>
         </div>
     )
