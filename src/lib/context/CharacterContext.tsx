@@ -17,12 +17,14 @@ interface CharacterState {
     class?: string;
     deity?: string;
     // new
-    bio: CharacterBio
+    bio: CharacterBio;
+    abilities: string[];
 }
 
 const defaultCharacter: CharacterState = {
     name: 'Adira',
-    bio: {}
+    bio: {},
+    abilities: [],
 };
 
 const characterReducer = (state: CharacterState, action: CharacterReducerAction): CharacterState => {

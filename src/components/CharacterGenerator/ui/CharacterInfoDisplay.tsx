@@ -12,8 +12,8 @@ export const CharacterInfoDisplay = () => {
     return (
         <div>
             <p>{character.name}</p>
-            <span>{location?.personLabel + ' '}</span>
-            <span>{selectedClass?.label}</span>
+            {location && <span>{location?.personLabel + ' '}</span>}
+            {selectedClass && <span>{selectedClass?.label}</span>}
             {selectedDeity && <p>Devout of {selectedDeity.label}</p>}
         </div>
     )
