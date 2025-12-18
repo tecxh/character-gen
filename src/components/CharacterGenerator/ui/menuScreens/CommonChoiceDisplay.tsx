@@ -1,4 +1,4 @@
-import { PassiveDisplay } from "~/components/common";
+import { AbilityDisplay, PassiveDisplay } from "~/components/common";
 import type { Ability, Passive } from "~/types";
 
 interface CommonChoiceDisplayProps {
@@ -18,7 +18,7 @@ export const CommonChoiceDisplay = (props: CommonChoiceDisplayProps) => {
             {passives && <h3>Passives</h3>}
             {passives?.map((passive) => <PassiveDisplay passive={passive} />)}
             {abilities && <h3>Abilities</h3>}
-            {abilities?.map((ability) => <p>{ability.label}</p>)}
+            {abilities?.map((ability) => <AbilityDisplay ability={ability}/>)}
         </div>
     )
 }
