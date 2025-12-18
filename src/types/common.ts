@@ -32,10 +32,13 @@ export interface Deity {
   classSupport: string[];
 }
 
+export type AbilityType = 'location' | 'class' | 'deity'
+
 export interface Ability {
   key: string;
   label: string;
   flavorText: string;
   cost: number;
   level: number;
+  type: AbilityType
 }
