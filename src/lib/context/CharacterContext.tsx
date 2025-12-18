@@ -35,19 +35,25 @@ const characterReducer = (state: CharacterState, action: CharacterReducerAction)
                 ...state,
                 name: action.updates.name ?? ''
             }
-        case 'class':
+        case 'class': {
             return {
                 ...state,
                 class: action.updates.class ?? ''
-            }
-        case 'origin-location':
+            }}
+        case 'origin-location': {
+            const { updates: { abilities, bio }} = action
+            const currentAbilities = state.abilities;
+            currentAbilities[0] = abilities ? abilities[0] : '';
+            // pretty ungraceful ngl
+
             return {
                 ...state,
                 bio: {
                     ...state.bio,
-                    originLocation: action.updates.bio?.originLocation
-                }
-            }
+                    originLocation: bio?.originLocation
+                },
+                abilities: currentAbilities,
+            }}
         case 'deity':
             return {
                 ...state,

@@ -14,7 +14,7 @@
             "personLabel": "Athenian",
             "flavorText": "your time in the great schools of Athens made you intelligent and quick witted",
             "passives": ["minor-intelligence-boost"],
-            "abilities": ["charm"]
+            "abilities": ["meditate"]
         },
         {
             "key": "sparta",

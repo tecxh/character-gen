@@ -4,7 +4,7 @@ export const CharacterInfoDisplay = () => {
     const character = useCharacter();
     const { locations, classes, deities } = useData();
 
-    const { bio: { originLocation }, class: charClass, deity: charDeity } = character;
+    const { bio: { originLocation }, class: charClass, deity: charDeity, abilities } = character;
     const location = locations.find((location) => location.key === originLocation);
     const selectedClass = classes.find((originalClass) => originalClass.key === charClass)
     const selectedDeity = deities.find((deity) => deity.key === charDeity)
@@ -15,6 +15,8 @@ export const CharacterInfoDisplay = () => {
             {location && <span>{location?.personLabel + ' '}</span>}
             {selectedClass && <span>{selectedClass?.label}</span>}
             {selectedDeity && <p>Devout of {selectedDeity.label}</p>}
+            <hr />
+            {abilities && abilities.map((ability) => <span>{ability}</span>)}
         </div>
     )
 }
