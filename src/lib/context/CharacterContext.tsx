@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useReducer, type Dispatch, type PropsWithChildren } from "react"
-import type { AbilityType } from "~/types";
+import type { AbilitySlot } from "~/types";
 
 type CharacterReducerActionType = 'name' | 'class' | 'origin-location' | 'deity'
 
@@ -17,10 +17,6 @@ interface CharacterReducerAction {
     updates: CharacterReducerActionUpdates;
 }
 
-interface AbilitySlot {
-    abilityKey?: string;
-    reservedFor: AbilityType;
-}
 interface CharacterState {
     name: string;
     class?: string;

@@ -34,6 +34,11 @@ export interface Deity {
 
 export type AbilityType = 'location' | 'class' | 'deity'
 
+export interface AbilitySlot {
+    abilityKey?: string;
+    reservedFor: AbilityType;
+}
+
 export interface Ability {
   key: string;
   label: string;

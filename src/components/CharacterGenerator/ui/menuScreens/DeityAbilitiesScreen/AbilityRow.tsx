@@ -1,14 +1,23 @@
-import type { AbilityType } from "~/types"
+import { useData } from "~/lib/context";
+import type { AbilitySlot } from "~/types"
 
 interface AbilityRowProps {
-  type: AbilityType
+  slot: AbilitySlot
 }
 
     // location or class abilities are locked by earlier choices
     // only deity abilities can be selected
-export const AbilityRow = ({ type }: AbilityRowProps) => {
-  const abilityLabel = 'placeholder label'
-  const tempColor = type !== 'deity' ? 'gray' : 'green'
+export const AbilityRow = ({ slot }: AbilityRowProps) => {
+  const { reservedFor, abilityKey } = slot;
+  const { abilities } = useData();
+
+  const reservedForDeity = reservedFor === 'deity'
+  const fallbackLabel = reservedForDeity ? 'Select from Deity Pool' : `Ability locked to ${reservedFor} choice`
+  const tempColor = reservedForDeity ? 'green' : 'gray'
+
+  const getAbilityLabel = (abilityKey: string) => abilities.find((ability) => ability.key === abilityKey)?.label
+  
+  const abilityLabel = abilityKey ? getAbilityLabel(abilityKey) : fallbackLabel
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row', columnGap: 20}}>
